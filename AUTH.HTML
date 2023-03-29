@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Physic Nutrition Product Authenticate</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		
+		form {
+			margin-bottom: 20px;
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+			cursor: pointer;
+		}
+		
+		.response {
+			font-size: 18px;
+			font-weight: bold;
+			margin-top: 20px;
+		}
+		
+		.success {
+			color: #4CAF50;
+		}
+		
+		.error {
+			color: #f44336;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Physic Nutrition Product Authenticate</h1>
+		<form method="POST" action="#" id="auth-form">
+			<label for="auth-code">Enter your unique code:</label>
+			<input type="text" name="auth-code" id="auth-code" required>
+			<input type="submit" value="Authenticate">
+		</form>
+		<div class="response" id="auth-response"></div>
+	</div>
+	
+	<script>
+		const form = document.getElementById('auth-form');
+		const response = document.getElementById('auth-response');
+		
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const code = document.getElementById('auth-code').value;
+			
+			// Here, you would need to check the entered code against your database of unique codes
+			// and determine whether it is a genuine, authentic product or a fake one
+			
+			if (code === "SANU123") {
+				response.innerText = "This is a genuine, authentic product!";
+				response.classList.add('success');
+			} else {
+				response.innerText = "This product is not authentic or fake!";
+				response.classList.add('error');
+			}
+		});
+	</script>
+</body>
+</html>
